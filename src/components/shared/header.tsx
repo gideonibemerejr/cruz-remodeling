@@ -45,7 +45,7 @@ const Header = () => {
 	useEffect(() => {
 		const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 		const desktopLinks = document.querySelectorAll<HTMLAnchorElement>(
-			"#d2c_nav_link_wrapper .nav_link_Small"
+			"#nav_link_wrapper .nav_link_Small"
 		);
 		const mobileNavLinksWrapper = document.getElementById("mobile-nav-links");
 
@@ -157,7 +157,7 @@ const Header = () => {
 
 	return (
 		<header className="sticky top-0 w-full z-50" id="navbar">
-			<nav className="d2c_navbar">
+			<nav className="navbar">
 				<div className="mr-auto flex justify-between items-center gap-3 lg:gap-6">
 					<div className="flex items-center justify-between gap-4 lg:gap-8 flex-wrap w-full container">
 						<div className="md:mr-5 text-white">
@@ -165,15 +165,15 @@ const Header = () => {
 						</div>
 						<div
 							className="hidden lg:flex space-x-2 mr-auto"
-							id="d2c_nav_link_wrapper"
+							id="nav_link_wrapper"
 						>
-							<Link href="#d2c_hero" className="nav_link nav_link_Small">
+							<Link href="#hero" className="nav_link nav_link_Small">
 								Home
 							</Link>
-							<Link href="#d2c_about" className="nav_link nav_link_Small">
+							<Link href="#about" className="nav_link nav_link_Small">
 								About
 							</Link>
-							<Link href="#d2c_services" className="nav_link nav_link_Small">
+							<Link href="#services" className="nav_link nav_link_Small">
 								Services
 							</Link>
 							<Link
@@ -186,30 +186,10 @@ const Header = () => {
 						<div className="hidden md:block ml-auto">
 							<Link
 								href="#contact"
-								className="group no-animation d2c_btn font-medium !font-secondary !px-6 py-2 !bg-white hover:!bg-primary !text-secondary border border-[#C2D6C9]/10"
+								className="group no-animation btn font-medium !font-secondary !px-6 py-2 !bg-white hover:!bg-primary !text-secondary border border-[#C2D6C9]/10"
 							>
 								<span className="relative z-10">Contact us</span>
 							</Link>
-						</div>
-						<div className="lg:hidden flex items-center">
-							<button
-								id="mobile-menu-btn"
-								className="text-primary border-primary bg-transparent focus:outline-none transition-all duration-500"
-							>
-								<svg
-									className="h-6 w-6"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="2"
-										d="M4 6h16M4 12h16m-7 6h7"
-									/>
-								</svg>
-							</button>
 						</div>
 					</div>
 				</div>

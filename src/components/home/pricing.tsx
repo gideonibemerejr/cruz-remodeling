@@ -5,110 +5,85 @@ import { FaAngleRight } from "react-icons/fa6";
 import { FaRegCircleCheck } from "react-icons/fa6";
 
 const plans = [
-    {
-        title: "Starter Plan",
-        desc: "Perfect for minor upgrades and small-scale improvements",
-        price: "$1,499",
-        delay: 400,
-        features: [
-            "Up to 1 Room Renovation",
-            "Material & Layout Planning",
-            "1 Design Revision",
-            "On-Site Supervision",
-            "Estimated Timeline: 1 Week",
-        ],
-    },
-    {
-        title: "Advanced Plan",
-        desc: "Ideal for kitchen, bath, balcony or living room makeovers",
-        price: "$3,799",
-        delay: 600,
-        features: [
-            "Multi-Room Remodeling",
-            "Custom Interior Design",
-            "2 Design Revisions",
-            "Dedicated Project Manager",
-            "Estimated Timeline: 2-3 Weeks",
-        ],
-    },
-    {
-        title: "Premium Plan",
-        desc: "Perfect for minor upgrades and small-scale improvement",
-        price: "Custom Quote",
-        delay: 800,
-        features: [
-            "Up to 1 Room Renovation",
-            "Material & Layout Planning",
-            "1 Design Revision",
-            "On-Site Supervision",
-            "Estimated Timeline: 1 Week",
-        ],
-    },
+	{
+		title: "Custom Quote",
+		desc: "Tailored solutions for your unique remodeling needs",
+		price: "Custom Quote",
+		delay: 400,
+		features: [
+			"Personalized Design Consultation",
+			"Custom Material Selection",
+			"Flexible Project Timeline",
+			"Dedicated Project Manager",
+			"Comprehensive Project Planning",
+		],
+	},
 ];
 
 const Pricing = () => {
-    return (
-        <section id="d2c_pricing">
-            <div className="container">
-                <div className="d2c_section_header overflow-hidden">
-                    <h5
-                        className="d2c_subtitle"
-                        data-aos="fade-down"
-                        data-aos-delay="400"
-                    >
-                        Ideas Trends and Stories
-                    </h5>
-                    <h2 className="d2c_title animateText !normal-case">
-                        Simple Transparent Packages
-                    </h2>
-                    <p data-aos="fade-up" data-aos-delay="600">
-                        Whether you&apos;re planning a quick upgrade or a full renovation, our
-                        flexible pricing options ensure you get expert service with no
-                        hidden costs.
-                    </p>
-                </div>
+	return (
+		<section id="pricing">
+			<div className="container">
+				<div className="section_header overflow-hidden">
+					<h5 className="subtitle" data-aos="fade-down" data-aos-delay="400">
+						Transparent Pricing
+					</h5>
+					<h2 className="title animateText !normal-case">
+						Flexible Plans for Every Budget
+					</h2>
+					<p data-aos="fade-up" data-aos-delay="800">
+						Choose the plan that fits your project needs and budget. All plans
+						include our commitment to quality and satisfaction.
+					</p>
+				</div>
 
-                <div className="grid grid-cols-12 gap-6">
-                    {plans.map((plan) => (
-                        <div
-                            className={`col-span-12 md:col-span-6 lg:col-span-4 ${plan.title === "Premium Plan" ? "md:col-start-4" : ""
-                                }`}
-                            key={plan.title}
-                        >
-                            <div
-                                className="d2c_pricing_card"
-                                data-aos="fade-up"
-                                data-aos-delay={plan.delay}
-                            >
-                                <h4>{plan.title}</h4>
-                                <p>{plan.desc}</p>
-                                <h3 className="d2c_price">{plan.price}</h3>
+				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{plans.map((plan, index) => (
+						<div
+							key={index}
+							className="pricing_card"
+							data-aos="fade-up"
+							data-aos-delay={400 + index * 200}
+						>
+							<div className="text-center">
+								<h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
+								<h3 className="price">{plan.price}</h3>
+								<p className="text-gray-600 mb-6">{plan.desc}</p>
+							</div>
 
-                                <ul className="space-y-4">
-                                    {plan.features.map((feature, index) => (
-                                        <li key={index} className="flex items-start gap-2">
-                                            <FaRegCircleCheck className="mt-1" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
+							<ul className="space-y-3 mb-8">
+								{plan.features.map((feature, featureIndex) => (
+									<li key={featureIndex} className="flex items-center">
+										<svg
+											className="w-5 h-5 text-primary mr-3 flex-shrink-0"
+											fill="currentColor"
+											viewBox="0 0 20 20"
+										>
+											<path
+												fillRule="evenodd"
+												d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+												clipRule="evenodd"
+											/>
+										</svg>
+										{feature}
+									</li>
+								))}
+							</ul>
 
-                                {/* Button */}
-                                <Link href="#" className="group d2c_btn mt-6 inline-block">
-                                    <span className="relative z-10">Get started</span>
-                                    <span className="d2c_btn_expand">
-                                        <span className="d2c_btn_icon">
-                                            <FaAngleRight />
-                                        </span>
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+							<Link href="#contact" className="group btn mt-6 inline-block">
+								<span className="relative z-10">Get Started</span>
+								<span className="btn_expand">
+									<span className="btn_icon">
+										<FaAngleRight />
+									</span>
+								</span>
+							</Link>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default Pricing;

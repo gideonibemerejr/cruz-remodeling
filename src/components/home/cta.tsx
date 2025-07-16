@@ -16,8 +16,7 @@ import Img8 from "@/assets/images/small-image-8.jpg";
 const CTA = () => {
 	useEffect(() => {
 		const updateLeftImageMargins = () => {
-			const navLinks =
-				document.querySelectorAll<HTMLElement>(".d2c_small_image");
+			const navLinks = document.querySelectorAll<HTMLElement>(".small_image");
 			const windowWidth = window.innerWidth;
 
 			navLinks.forEach((link, index) => {
@@ -38,9 +37,8 @@ const CTA = () => {
 		};
 
 		const updateRightImageMargins = () => {
-			const navLinks = document.querySelectorAll<HTMLElement>(
-				".d2c_small_image_right"
-			);
+			const navLinks =
+				document.querySelectorAll<HTMLElement>(".small_image_right");
 			const windowWidth = window.innerWidth;
 
 			navLinks.forEach((link, index) => {
@@ -85,13 +83,13 @@ const CTA = () => {
 				<div className="bg-cta-1 py-20 lg:py-32 rounded relative overflow-hidden min-h-[250px] lg:min-h-[450px] xl:min-h-[550px] flex items-center justify-center p-4">
 					{/* Content */}
 					<div className="md:max-w-[50%] xl:max-w-[40%] 2xl:max-w-[50%] mx-auto text-center z-20">
-						<h2 className="d2c_title 2xl:text-7xl text-white mb-6 xl:mb-8 animateText !normal-case">
+						<h2 className="title 2xl:text-7xl text-white mb-6 xl:mb-8 animateText !normal-case">
 							Bring Your Dream Home to Life Today
 						</h2>
-						<Link href="#contact" className="group d2c_btn">
+						<Link href="#contact" className="group btn">
 							<span className="relative z-10">Get free consultation</span>
-							<span className="d2c_btn_expand">
-								<span className="d2c_btn_icon">
+							<span className="btn_expand">
+								<span className="btn_icon">
 									<FaAngleRight />
 								</span>
 							</span>
@@ -102,7 +100,7 @@ const CTA = () => {
 					<div className="absolute left-0 md:-left-4 xl:-left-10 space-y-3 opacity-20 md:opacity-100">
 						{[Img1, Img2, Img3, Img4].map((src, index) => (
 							<div
-								className="d2c_small_image"
+								className="small_image"
 								data-aos="fade-right"
 								data-aos-delay={`${(index + 1) * 100}`}
 								key={`left-${index}`}
@@ -121,7 +119,7 @@ const CTA = () => {
 					<div className="absolute right-0 md:-right-4 xl:-right-10 space-y-3 opacity-20 md:opacity-100">
 						{[Img5, Img6, Img7, Img8].map((src, index) => (
 							<div
-								className="d2c_small_image_right"
+								className="small_image_right"
 								data-aos="fade-left"
 								data-aos-delay={`${(index + 1) * 100}`}
 								key={`right-${index}`}

@@ -2,13 +2,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import { FaAngleDown, FaAngleRight } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
 interface FormData {
 	firstName: string;
 	lastName: string;
 	email: string;
-	package: string;
+	phone: string;
+	projectType: string;
+	roomType: string;
+	projectSize: string;
+	timeline: string;
+	budget: string;
 	message: string;
 }
 
@@ -18,10 +23,7 @@ const Contact = () => {
 		handleSubmit,
 		reset,
 		formState: { errors, isSubmitting },
-		watch,
 	} = useForm<FormData>();
-
-	const selectedPackage = watch("package");
 
 	const onSubmit = async (data: FormData) => {
 		await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -34,21 +36,16 @@ const Contact = () => {
 		<section id="contact">
 			<Toaster position="top-right" reverseOrder={false} />
 			<div className="container">
-				<div className="d2c_section_header overflow-hidden">
-					<h5
-						className="d2c_subtitle"
-						data-aos="fade-down"
-						data-aos-delay="400"
-					>
-						Talk to the Experts
+				<div className="section_header overflow-hidden">
+					<h5 className="subtitle" data-aos="fade-down" data-aos-delay="400">
+						Get In Touch
 					</h5>
-					<h2 className="d2c_title animateText !normal-case">
-						Let&apos;s Bring Your Vision to Life
+					<h2 className="title animateText !normal-case">
+						Ready to Start Your Project?
 					</h2>
-					<p data-aos="fade-up" data-aos-delay="600">
-						Have questions or ready to start your remodeling journey? Our team
-						is here to guide you through every detail. Reach out today and
-						let&apos;s build something.
+					<p data-aos="fade-up" data-aos-delay="800">
+						Let&apos;s discuss your vision and create a plan that brings your
+						dream space to life. Contact us today for a free consultation.
 					</p>
 				</div>
 
@@ -88,7 +85,7 @@ const Contact = () => {
 							</div>
 						</div>
 
-						{/* Email and Package */}
+						{/* Email and Phone */}
 						<div className="grid grid-cols-1 gap-8 sm:grid-cols-6">
 							<div className="sm:col-span-3">
 								<input
@@ -102,49 +99,142 @@ const Contact = () => {
 									<p className="text-red-500 text-sm">Email is required</p>
 								)}
 							</div>
-
 							<div className="sm:col-span-3">
-								<div className="relative border-b border-b-[#C2D6C9]/60">
-									<select
-										className={`block appearance-none form-control border-none px-1 ${
-											selectedPackage && selectedPackage !== ""
-												? "text-neutral"
-												: "text-neutral/70"
-										}`}
-										{...register("package", {
-											required: "Please select a package",
-										})}
-										defaultValue=""
-									>
-										<option value="" disabled>
-											Choose your package
-										</option>
-										<option value="starter">Starter Plan - $1,499</option>
-										<option value="advanced">Advanced Plan - $3,799</option>
-										<option value="premium">Premium Plan - Custom Quote</option>
-									</select>
-									<div className="pointer-events-none absolute inset-y-0 right-3 flex items-center px-2 text-neutral/70">
-										<FaAngleDown />
-									</div>
-								</div>
-								{errors.package && (
+								<input
+									type="tel"
+									autoComplete="off"
+									className="form-control"
+									placeholder="(555) 123-4567"
+									{...register("phone", {
+										required: "Phone number is required",
+										pattern: {
+											value: /^[\+]?[1-9][\d]{0,15}$/,
+											message: "Please enter a valid US phone number",
+										},
+									})}
+								/>
+								{errors.phone && (
+									<p className="text-red-500 text-sm">{errors.phone.message}</p>
+								)}
+							</div>
+						</div>
+
+						{/* Project Type */}
+						<div>
+							<select
+								className="form-control"
+								{...register("projectType", { required: true })}
+							>
+								<option value="">What type of project are you planning?</option>
+								<option value="Kitchen Remodel">Kitchen Remodel</option>
+								<option value="Bathroom Remodel">Bathroom Remodel</option>
+								<option value="Living Room">Living Room</option>
+								<option value="Bedroom">Bedroom</option>
+								<option value="Basement">Basement</option>
+								<option value="Attic">Attic</option>
+								<option value="Outdoor/Deck">Outdoor/Deck</option>
+								<option value="Full Home">Full Home</option>
+								<option value="Other">Other</option>
+							</select>
+							{errors.projectType && (
+								<p className="text-red-500 text-sm">Project type is required</p>
+							)}
+						</div>
+
+						{/* Room Type and Project Size */}
+						<div className="grid grid-cols-1 gap-8 sm:grid-cols-6">
+							<div className="sm:col-span-3">
+								<select
+									className="form-control"
+									{...register("roomType", { required: true })}
+								>
+									<option value="">How many rooms are involved?</option>
+									<option value="1 Room">1 Room</option>
+									<option value="2-3 Rooms">2-3 Rooms</option>
+									<option value="4-5 Rooms">4-5 Rooms</option>
+									<option value="6+ Rooms">6+ Rooms</option>
+									<option value="Full House">Full House</option>
+								</select>
+								{errors.roomType && (
+									<p className="text-red-500 text-sm">Room count is required</p>
+								)}
+							</div>
+							<div className="sm:col-span-3">
+								<select
+									className="form-control"
+									{...register("projectSize", { required: true })}
+								>
+									<option value="">
+										What&apos;s the approximate square footage?
+									</option>
+									<option value="Under 500 sq ft">Under 500 sq ft</option>
+									<option value="500-1000 sq ft">500-1000 sq ft</option>
+									<option value="1000-2000 sq ft">1000-2000 sq ft</option>
+									<option value="2000-3000 sq ft">2000-3000 sq ft</option>
+									<option value="Over 3000 sq ft">Over 3000 sq ft</option>
+									<option value="Not sure">Not sure</option>
+								</select>
+								{errors.projectSize && (
 									<p className="text-red-500 text-sm">
-										{errors.package.message}
+										Project size is required
 									</p>
 								)}
 							</div>
 						</div>
 
-						{/* Message */}
+						{/* Timeline and Budget */}
+						<div className="grid grid-cols-1 gap-8 sm:grid-cols-6">
+							<div className="sm:col-span-3">
+								<select
+									className="form-control"
+									{...register("timeline", { required: true })}
+								>
+									<option value="">When would you like to start?</option>
+									<option value="ASAP">ASAP</option>
+									<option value="Within 1 month">Within 1 month</option>
+									<option value="1-3 months">1-3 months</option>
+									<option value="3-6 months">3-6 months</option>
+									<option value="6+ months">6+ months</option>
+									<option value="Just exploring">Just exploring</option>
+								</select>
+								{errors.timeline && (
+									<p className="text-red-500 text-sm">Timeline is required</p>
+								)}
+							</div>
+							<div className="sm:col-span-3">
+								<select
+									className="form-control"
+									{...register("budget", { required: true })}
+								>
+									<option value="">What&apos;s your budget range?</option>
+									<option value="Under $10,000">Under $10,000</option>
+									<option value="$10,000 - $25,000">$10,000 - $25,000</option>
+									<option value="$25,000 - $50,000">$25,000 - $50,000</option>
+									<option value="$50,000 - $100,000">$50,000 - $100,000</option>
+									<option value="$100,000 - $200,000">
+										$100,000 - $200,000
+									</option>
+									<option value="Over $200,000">Over $200,000</option>
+									<option value="Not sure">Not sure</option>
+								</select>
+								{errors.budget && (
+									<p className="text-red-500 text-sm">Budget is required</p>
+								)}
+							</div>
+						</div>
+
+						{/* Project Details */}
 						<div>
 							<textarea
 								rows={4}
 								className="form-control"
-								placeholder="Write your query"
+								placeholder="Tell us about your project vision, specific requirements, or any questions you have..."
 								{...register("message", { required: true })}
 							></textarea>
 							{errors.message && (
-								<p className="text-red-500 text-sm">Message is required</p>
+								<p className="text-red-500 text-sm">
+									Project details are required
+								</p>
 							)}
 						</div>
 
@@ -152,21 +242,19 @@ const Contact = () => {
 						<div className="text-center">
 							<button
 								type="submit"
-								className={`d2c_btn group relative ${
-									isSubmitting
-										? '!text-transparent after:content-[""] after:absolute after:w-4 after:h-4 after:rounded-full after:border-2 after:border-t-primary after:border-white after:animate-spin after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2'
-										: ""
-								}`}
 								disabled={isSubmitting}
+								className={`btn group relative ${
+									isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+								}`}
 							>
-								<span className="relative z-10">Get started</span>
-								{!isSubmitting && (
-									<span className="d2c_btn_expand">
-										<span className="d2c_btn_icon">
-											<FaAngleRight />
-										</span>
+								<span className="relative z-10">
+									{isSubmitting ? "Sending..." : "Send Message"}
+								</span>
+								<span className="btn_expand">
+									<span className="btn_icon">
+										<FaAngleRight />
 									</span>
-								)}
+								</span>
 							</button>
 						</div>
 					</form>

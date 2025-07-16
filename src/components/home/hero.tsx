@@ -14,21 +14,21 @@ import Hero3 from "@/assets/images/hero-slide-image-3.jpg";
 
 const Hero = () => {
 	return (
-		<section className="bg-hero" id="d2c_hero">
+		<section className="bg-hero" id="hero">
 			<div className="container">
 				<div className="grid grid-cols-12 gap-4 md:gap-8 min-h-[700px] items-center">
 					{/* Left content */}
 					<div className="col-span-12 lg:col-span-6">
 						<div className="space-y-6 text-center lg:text-left">
-							{/* <h5
-								className="d2c_subtitle !text-primary !border-[#C2D6C9]/10"
+							<h5
+								className="subtitle !text-primary !border-[#C2D6C9]/10"
 								data-aos="fade-down"
 								data-aos-delay="400"
 							>
-								We believe in simple & minimalistic
-							</h5> */}
+								We believe in good, honest work
+							</h5>
 
-							<h1 className="d2c_title text-white text-center lg:text-left animateText !normal-case text-4xl md:text-6xl lg:text-5xl 2xl:text-[76px]">
+							<h1 className="title text-white text-center lg:text-left animateText !normal-case text-4xl md:text-6xl lg:text-5xl 2xl:text-[76px]">
 								Turning Ideas into Remarkable Design
 							</h1>
 
@@ -44,10 +44,10 @@ const Hero = () => {
 
 							<div className="md:flex justify-center lg:justify-start gap-4">
 								<div data-aos="fade-up" data-aos-delay="1200">
-									<Link href="#contact" className="group d2c_btn">
+									<Link href="#contact" className="group btn">
 										<span className="relative z-10">Get started now</span>
-										<span className="d2c_btn_expand">
-											<span className="d2c_btn_icon">
+										<span className="btn_expand">
+											<span className="btn_icon">
 												<FaAngleRight />
 											</span>
 										</span>
@@ -89,12 +89,12 @@ const Hero = () => {
 									slidesPerView: 3,
 								},
 							}}
-							className="d2c_hero_img_slider"
+							className="hero_img_slider"
 						>
 							{[Hero1, Hero2, Hero3].map((image, index) => (
 								<SwiperSlide key={index}>
 									<div
-										className="d2c_slide_item group"
+										className="slide_item group"
 										data-aos="fade-up"
 										data-aos-delay={400 + index * 200}
 									>
@@ -103,13 +103,13 @@ const Hero = () => {
 											alt="Interior Design"
 											className="w-full h-full object-cover"
 										/>
-										<div className="bg-hero-slider d2c_hover_content group-hover:opacity-100">
+										<div className="bg-hero-slider hover_content group-hover:opacity-100">
 											<p className="text-white text-lg font-medium text-center">
 												{index === 0 || index === 3
 													? "Bathroom"
 													: index === 1
-													? "Bedroom"
-													: "Dining"}
+														? "Bedroom"
+														: "Dining"}
 												<br />
 												Remodeling
 											</p>

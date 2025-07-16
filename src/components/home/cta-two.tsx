@@ -16,7 +16,7 @@ const CTATwo = () => {
 					<div className="grid grid-cols-12 gap-4 md:gap-6 items-center">
 						<div className="col-span-12 md:col-span-7 xl:col-span-8">
 							<div className="space-y-5 text-center md:text-left">
-								<h2 className="d2c_title text-white animateText !normal-case">
+								<h2 className="title text-white animateText !normal-case">
 									Build the Space You&apos;ve Always Wanted
 								</h2>
 								<p
@@ -31,10 +31,13 @@ const CTATwo = () => {
 
 								{/* Button */}
 								<div data-aos="fade-up" data-aos-delay="800">
-									<Link href="#contact" className="group d2c_btn inline-block">
-										<span className="relative z-10">Get free consultation</span>
-										<span className="d2c_btn_expand">
-											<span className="d2c_btn_icon">
+									<Link
+										href="#contact"
+										className="group btn inline-block !pr-16"
+									>
+										<span className="relative z-10">Get Started</span>
+										<span className="btn_expand">
+											<span className="btn_icon">
 												<FaAngleRight />
 											</span>
 										</span>

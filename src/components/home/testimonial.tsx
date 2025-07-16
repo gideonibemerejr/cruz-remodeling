@@ -33,54 +33,62 @@ const testimonials = [
 
 const Testimonial = () => {
 	return (
-		<section id="d2c_testimonial">
+		<section id="testimonial">
 			<div className="container">
-				<div className="d2c_section_header overflow-hidden">
-					<h5
-						className="d2c_subtitle"
-						data-aos="fade-down"
-						data-aos-delay="400"
-					>
-						Real Stories Real Homes
+				<div className="section_header overflow-hidden">
+					<h5 className="subtitle" data-aos="fade-down" data-aos-delay="400">
+						What Our Clients Say
 					</h5>
-					<h2 className="d2c_title animateText !normal-case">
-						Transforming Spaces Earning Trust
+					<h2 className="title animateText !normal-case">
+						Trusted by Homeowners
 					</h2>
-					<p data-aos="fade-up" data-aos-delay="600">
-						At Cruz Remodeling, every project is a partnership built on
-						reliability, craftsmanship. From cozy makeovers to full-scale
-						renovations, our client&apos;s words about the quality we deliver.
+					<p data-aos="fade-up" data-aos-delay="800">
+						Don&apos;t just take our word for it. Here&apos;s what our satisfied
+						clients have to say about their remodeling experience with us.
 					</p>
 				</div>
 
 				<Swiper
 					modules={[Autoplay]}
-					spaceBetween={24}
-					speed={5000}
-					autoplay={{ delay: 0, disableOnInteraction: false }}
-					slidesPerView={4}
+					spaceBetween={30}
+					slidesPerView={1}
 					loop={true}
-					breakpoints={{
-						320: { slidesPerView: 1 },
-						768: { slidesPerView: 2 },
-						1024: { slidesPerView: 3 },
+					autoplay={{
+						delay: 5000,
+						disableOnInteraction: false,
 					}}
-					className="d2c_testimonial_slider"
+					breakpoints={{
+						768: {
+							slidesPerView: 2,
+						},
+						1024: {
+							slidesPerView: 3,
+						},
+					}}
+					className="testimonial_slider"
 				>
-					{testimonials.map((item, index) => (
-						<SwiperSlide key={index} className="swiper-slide">
-							<div className="d2c_testimonial_card">
-								<div className="space-y-5">
-									<h4>{item.title}</h4>
-									<hr />
-									<p>{item.content}</p>
-								</div>
-								<div className="border-t border-t-[#C2D6C9]/20 pt-5 grid grid-cols-2">
-									<p className="font-primary text-secondary">{item.name}</p>
-									<div className="text-right text-primary flex justify-end">
+					{testimonials.map((testimonial, index) => (
+						<SwiperSlide key={index}>
+							<div className="testimonial_card">
+								<div className="space-y-4">
+									<div className="flex items-center space-x-1">
 										{[...Array(5)].map((_, i) => (
-											<FaStar key={i} />
+											<FaStar key={i} className="text-yellow-400" />
 										))}
+									</div>
+									<p className="text-gray-700">{testimonial.content}</p>
+									<div className="flex items-center space-x-3">
+										<div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
+											{testimonial.name.charAt(0)}
+										</div>
+										<div>
+											<h4 className="font-semibold text-secondary">
+												{testimonial.name}
+											</h4>
+											<p className="text-sm text-gray-600">
+												{testimonial.title}
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>

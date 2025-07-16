@@ -11,17 +11,13 @@ import FlooringIcon from "@/assets/images/flooring.png";
 
 const Services = () => {
 	return (
-		<section id="d2c_services">
+		<section id="services">
 			<div className="container">
-				<div className="d2c_section_header overflow-hidden">
-					<h5
-						className="d2c_subtitle"
-						data-aos="fade-down"
-						data-aos-delay="400"
-					>
+				<div className="section_header overflow-hidden">
+					<h5 className="subtitle" data-aos="fade-down" data-aos-delay="400">
 						Full-Service Home Remodeling
 					</h5>
-					<h2 className="d2c_title animateText !normal-case">
+					<h2 className="title animateText !normal-case">
 						Built to Fit Every Space and Lifestyle
 					</h2>
 					<p data-aos="fade-up" data-aos-delay="800">
@@ -34,7 +30,7 @@ const Services = () => {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 					<div
-						className="d2c_card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
+						className="card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
 						data-aos="fade-up"
 						data-aos-delay="400"
 					>
@@ -48,7 +44,7 @@ const Services = () => {
 					</div>
 
 					<div
-						className="d2c_card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
+						className="card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
 						data-aos="fade-up"
 						data-aos-delay="600"
 					>
@@ -64,7 +60,7 @@ const Services = () => {
 					</div>
 
 					<div
-						className="d2c_card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
+						className="card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
 						data-aos="fade-up"
 						data-aos-delay="800"
 					>
@@ -78,7 +74,7 @@ const Services = () => {
 					</div>
 
 					<div
-						className="d2c_card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
+						className="card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
 						data-aos="fade-up"
 						data-aos-delay="1400"
 					>
@@ -94,7 +90,7 @@ const Services = () => {
 					</div>
 
 					<div
-						className="d2c_card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
+						className="card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
 						data-aos="fade-up"
 						data-aos-delay="1200"
 					>
@@ -108,7 +104,7 @@ const Services = () => {
 					</div>
 
 					<div
-						className="d2c_card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
+						className="card p-7 2xl:p-9 bg-light-blue rounded space-y-4"
 						data-aos="fade-up"
 						data-aos-delay="1000"
 					>

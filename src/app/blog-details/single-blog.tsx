@@ -1,141 +1,122 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-import postImg1 from '@/assets/images/post-image-1.jpg';
-import postImg2 from '@/assets/images/post-image-2.jpg';
-import postImg3 from '@/assets/images/post-image-3.jpg';
+import postImg1 from "@/assets/images/post-image-1.jpg";
+import postImg2 from "@/assets/images/post-image-2.jpg";
+import postImg3 from "@/assets/images/post-image-3.jpg";
+
+const relatedPosts = [
+	{
+		title: "5 Renovation Mistakes to Avoid",
+		image: postImg1,
+		date: "March 10, 2024",
+	},
+	{
+		title: "Top 2024 Kitchen Design Trends",
+		image: postImg2,
+		date: "March 5, 2024",
+	},
+	{
+		title: "How to Maximize Small Spaces",
+		image: postImg3,
+		date: "February 28, 2024",
+	},
+];
 
 const SingleBlog = () => {
-    return (
-        <section>
-            <div className="container">
-                {/* Post content */}
-                <div className="flex flex-col flex-wrap space-y-5">
-                    <h1 className="d2c_title" data-aos="fade-up" data-aos-delay="400">
-                        5 Renovation Mistakes to Avoid
-                    </h1>
-                    <p className="text-base" data-aos="fade-up" data-aos-delay="600">
-                        12 November 2023
-                    </p>
+	return (
+		<section>
+			<div className="container">
+				<h1 className="title" data-aos="fade-up" data-aos-delay="400">
+					Transform Your Kitchen: A Complete Remodeling Guide
+				</h1>
+				<div className="flex items-center space-x-4 text-gray-600 mb-8">
+					<span>By Cruz Remodeling</span>
+					<span>•</span>
+					<span>March 15, 2024</span>
+					<span>•</span>
+					<span>5 min read</span>
+				</div>
 
-                    <div data-aos="fade-up" data-aos-delay="800">
-                        <Image
-                            src={postImg1}
-                            alt="Post Image"
-                            className="rounded w-full h-auto"
-                            placeholder="blur"
-                        />
-                    </div>
+				<div className="prose prose-lg max-w-none">
+					<p className="text-lg leading-relaxed mb-6">
+						Kitchen remodeling is one of the most rewarding home improvement
+						projects you can undertake. Not only does it enhance the aesthetic
+						appeal of your home, but it also increases its value and improves
+						functionality. In this comprehensive guide, we&apos;ll walk you
+						through everything you need to know about kitchen remodeling.
+					</p>
 
-                    <div data-aos="fade-up" data-aos-delay="400">
-                        <h4>Skipping the Budget Planning</h4>
-                        <p>
-                            Many start without a clear budget, only to run into financial surprises midway.
-                            Always set a realistic budget and add a 10–15% buffer for unexpected expenses.
-                            Skipping building permits may seem like a shortcut, but it can delay your project or lead to fines.
-                            Always check local regulations and secure the necessary approvals.
-                        </p>
-                    </div>
+					<h2>Planning Your Kitchen Remodel</h2>
+					<p>
+						The key to a successful kitchen remodel is thorough planning. Start
+						by assessing your current kitchen&apos;s strengths and weaknesses.
+						What works well? What needs improvement? Consider your lifestyle,
+						cooking habits, and the needs of your family.
+					</p>
 
-                    <div data-aos="fade-up" data-aos-delay="400">
-                        <h4>Choosing Style Over Function</h4>
-                        <p>
-                            Aesthetic upgrades are great—but don’t overlook functionality. Think about traffic flow,
-                            storage needs, and practical layouts to ensure your remodel serves your lifestyle.
-                            A lower bid might be tempting, but it can mean poor quality or hidden fees.
-                            Instead, hire based on reputation, references, and clear communication.
-                        </p>
-                    </div>
+					<h2>Design Considerations</h2>
+					<p>
+						Modern kitchen design focuses on creating a space that&apos;s both
+						beautiful and functional. Consider the work triangle concept, which
+						places the refrigerator, sink, and stove in a triangular formation
+						for optimal workflow.
+					</p>
 
-                    <div data-aos="fade-up" data-aos-delay="400">
-                        <h4>Natural Wood Tones</h4>
-                        <p>
-                            Earthy palettes and warm wood finishes are replacing all-white kitchens.
-                            Oak and walnut cabinetry are especially popular for a cozy, organic look.
-                            While purely decorative shelving is
-                        </p>
-                    </div>
-                </div>
+					<h2>Material Selection</h2>
+					<p>
+						From countertops to cabinets, the materials you choose will have a
+						significant impact on both the look and durability of your kitchen.
+						Quartz countertops offer excellent durability and low maintenance,
+						while hardwood cabinets provide timeless beauty.
+					</p>
 
-                {/* Latest News Section */}
-                <div className="mt-10 lg:mt-14 xl:mt-20">
-                    <div className="d2c_section_header">
-                        <h2 className="d2c_title animateText !normal-case">Latest News</h2>
-                    </div>
+					<h2>Working with Professionals</h2>
+					<p>
+						While DIY projects can be rewarding, kitchen remodeling is best left
+						to professionals. Experienced contractors understand building codes,
+						permits, and the complexities of plumbing and electrical work.
+					</p>
+				</div>
 
-                    <div className="grid grid-cols-12 gap-6">
-                        <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                            <div data-aos="fade-up" data-aos-delay="400">
-                                <Link href="/blog-details">
-                                    <Image
-                                        src={postImg1}
-                                        alt="Post Image"
-                                        className="d2c_post_image w-full h-auto"
-                                        placeholder="blur"
-                                    />
-                                </Link>
-                                <div className="py-5 space-y-4">
-                                    <h4>
-                                        <Link href="/blog-details" className="d2c_blog_title">
-                                            5 Renovation Mistakes to Avoid
-                                        </Link>
-                                    </h4>
-                                    <p>Learn the common pitfalls homeowners face and how to sidestep them effortlessly.</p>
-                                    <p className="text-base">12 April 2024</p>
-                                </div>
-                            </div>
-                        </div>
+				{/* Related Posts */}
+				<div className="mt-16">
+					<div className="section_header">
+						<h2 className="title animateText !normal-case">Latest News</h2>
+						<p>
+							Discover more insights and tips for your home improvement
+							projects.
+						</p>
+					</div>
 
-                        <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                            <div data-aos="fade-up" data-aos-delay="600">
-                                <Link href="/blog-details">
-                                    <Image
-                                        src={postImg2}
-                                        alt="Post Image"
-                                        className="d2c_post_image w-full h-auto"
-                                        placeholder="blur"
-                                    />
-                                </Link>
-                                <div className="py-5 space-y-4">
-                                    <h4>
-                                        <Link href="/blog-details" className="d2c_blog_title">
-                                            Top 2025 Kitchen Design Trends
-                                        </Link>
-                                    </h4>
-                                    <p>Discover the colors, materials, and layouts defining modern kitchens this year.</p>
-                                    <p className="text-base">12 March 2025</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-span-12 md:col-span-6 md:col-start-4 lg:col-span-4">
-                            <div data-aos="fade-up" data-aos-delay="800">
-                                <Link href="/blog-details">
-                                    <Image
-                                        src={postImg3}
-                                        alt="Post Image"
-                                        className="d2c_post_image w-full h-auto"
-                                        placeholder="blur"
-                                    />
-                                </Link>
-                                <div className="py-5 space-y-4">
-                                    <h4>
-                                        <Link href="/blog-details" className="d2c_blog_title">
-                                            How to Maximize Small Spaces
-                                        </Link>
-                                    </h4>
-                                    <p>Smart remodeling ideas to make your compact home feel bigger and brighter.</p>
-                                    <p className="text-base">12 November 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{relatedPosts.map((post, index) => (
+							<div key={index} className="space-y-4">
+								<Link href="/blog-details">
+									<Image
+										src={post.image}
+										alt={post.title}
+										className="post_image w-full h-auto"
+										placeholder="blur"
+									/>
+								</Link>
+								<div className="space-y-2">
+									<h4>
+										<Link href="/blog-details" className="blog_title">
+											{post.title}
+										</Link>
+									</h4>
+									<p className="text-sm text-gray-600">{post.date}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default SingleBlog;

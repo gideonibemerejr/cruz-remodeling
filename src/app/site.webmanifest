@@ -1,0 +1,37 @@
+{
+	"name": "Cruz Remodeling - Home Remodeling Services",
+	"short_name": "Cruz Remodeling",
+	"description": "Professional home remodeling services including kitchen, bathroom, and whole home renovations. Transform your space with Cruz Remodeling.",
+	"icons": [
+		{
+			"src": "/site/favicon-16x16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/site/favicon-32x32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/site/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/site/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	],
+	"theme_color": "#3acf6e",
+	"background_color": "#f9fbf9",
+	"display": "standalone",
+	"start_url": "/",
+	"scope": "/",
+	"orientation": "portrait-primary",
+	"categories": ["home", "business", "lifestyle"],
+	"lang": "en-US"
+}

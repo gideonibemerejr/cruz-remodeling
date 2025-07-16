@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { FaPlus } from "react-icons/fa6";
 
 interface FAQItem {
 	question: string;
@@ -50,51 +49,62 @@ const FAQ = () => {
 	return (
 		<section>
 			<div className="container">
-				<div className="d2c_section_header overflow-hidden">
-					<h5
-						className="d2c_subtitle"
-						data-aos="fade-down"
-						data-aos-delay="400"
-					>
-						Answers to Your Common Questions
+				<div className="section_header overflow-hidden">
+					<h5 className="subtitle" data-aos="fade-down" data-aos-delay="400">
+						Frequently Asked Questions
 					</h5>
-					<h2 className="d2c_title animateText !normal-case">
+					<h2 className="title animateText !normal-case">
 						Everything You Need to Know
 					</h2>
-					<p data-aos="fade-up" data-aos-delay="600">
-						Whether you&apos;re planning a quick upgrade or a full renovation,
-						our flexible pricing options ensure you get expert service with no
-						hidden costs.
+					<p data-aos="fade-up" data-aos-delay="800">
+						Get answers to common questions about our remodeling process,
+						timeline, and what to expect during your project.
 					</p>
 				</div>
 
-				<div className="max-w-full md:max-w-[85%] xl:max-w-3/4 mx-auto p-6 lg:p-10 bg-light-blue rounded overflow-hidden">
+				<div className="max-w-4xl mx-auto">
 					{faqData.map((item, index) => (
-						<div key={index} data-aos="fade-up" data-aos-delay="400">
-							{/* Header */}
-							<div
-								className="accordion-header flex justify-between items-center cursor-pointer py-4"
+						<div
+							key={index}
+							className="border-b border-gray-200 last:border-b-0"
+							data-aos="fade-up"
+							data-aos-delay={400 + index * 100}
+						>
+							<button
+								className="accordion-header w-full text-left py-6 flex justify-between items-center"
 								onClick={() => toggleAccordion(index)}
 							>
-								<h4 className="d2c_question text-lg font-medium">
+								<h4 className="question text-lg font-medium">
 									{item.question}
 								</h4>
-								<span className="icon-wrapper transition-transform duration-300">
-									<FaPlus
-										className={`transform transition-transform duration-300 text-gray-600 ${
-											activeIndex === index ? "rotate-45" : ""
-										}`}
-									/>
+								<span
+									className={`transform transition-transform duration-300 ${
+										activeIndex === index ? "rotate-180" : ""
+									}`}
+								>
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M6 9L12 15L18 9"
+											stroke="currentColor"
+											strokeWidth="2"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+										/>
+									</svg>
 								</span>
-							</div>
-
-							{/* Content */}
+							</button>
 							<div
-								className={`accordion-content overflow-hidden transition-all duration-500 ease-in-out ${
-									activeIndex === index ? "max-h-[200px] pt-0 pb-4" : "max-h-0"
+								className={`accordion-content ${
+									activeIndex === index ? "max-h-96 pb-6" : ""
 								}`}
 							>
-								<p className="d2c_answer text-gray-700">{item.answer}</p>
+								<p className="answer text-gray-700">{item.answer}</p>
 							</div>
 						</div>
 					))}
