@@ -9,19 +9,7 @@ import {
 	Section,
 } from "@react-email/components";
 import * as React from "react";
-
-interface EmailTemplateProps {
-	firstName: string;
-	lastName: string;
-	email: string;
-	phone: string;
-	projectType: string;
-	roomType: string;
-	projectSize: string;
-	timeline: string;
-	budget: string;
-	message: string;
-}
+import { EmailTemplateProps } from "@/app/queries/types/email";
 
 export default function Email({
 	firstName,

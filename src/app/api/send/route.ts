@@ -19,8 +19,12 @@ export async function POST(req: Request) {
 
 	try {
 		const { data, error } = await resend.emails.send({
-			from: "Cruz Remodeling Website <website@cruzremodeling.com>",
-			to: ["gideon.ibemere.jr@gmail.com", "gracie.ibemere@gmail.com"],
+			from: "Cruz Remodeling Website <website@cruzremodelingtx.com>",
+			to: [
+				"gideon.ibemere.jr@gmail.com",
+				"gracie.ibemere@gmail.com",
+				"stephanie.ibemere@gmail.com",
+			],
 			subject: "New Consultation Request",
 			react: EmailTemplate({
 				firstName,
