@@ -194,6 +194,24 @@ const Header = () => {
 								<span className="relative z-10">Contact us</span>
 							</Link>
 						</div>
+						<button
+							id="mobile-menu-btn"
+							className="lg:hidden text-white focus:outline-none"
+						>
+							<svg
+								className="h-6 w-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
+									d="M4 6h16M4 12h16M4 18h16"
+								/>
+							</svg>
+						</button>
 					</div>
 				</div>
 			</nav>
