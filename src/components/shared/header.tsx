@@ -194,55 +194,26 @@ const Header = () => {
 								<span className="relative z-10">Contact us</span>
 							</Link>
 						</div>
-						<button
-							id="mobile-menu-btn"
-							className="lg:hidden text-white focus:outline-none"
-						>
-							<svg
-								className="h-6 w-6"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M4 6h16M4 12h16M4 18h16"
-								/>
-							</svg>
-						</button>
+							<button id="mobile-menu-btn" className="text-primary border-primary bg-transparent focus:outline-none transition-all duration-500">
+                                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                                </svg>
+                            </button>
 					</div>
 				</div>
 			</nav>
 			<div id="mobile-menu" className="hidden bg-secondary z-50">
-				<div className="block lg:hidden p-6 pt-4 w-full">
-					<div className="flex justify-end items-center">
-						<button
-							id="close-drawer-btn"
-							className="text-white focus:outline-none border border-secondary rounded"
-						>
-							<svg
-								className="h-6 w-6"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M6 18L18 6M6 6l12 12"
-								/>
-							</svg>
-						</button>
-					</div>
-					<div
-						id="mobile-nav-links"
-						className="mt-2 grid grid-cols-1 gap-1 gap-x-4"
-					></div>
-				</div>
-			</div>
+                <div className="block lg:hidden p-6 pt-4 w-full">
+                    <div className="flex justify-end items-center">
+                        <button id="close-drawer-btn" className="text-white focus:outline-none border border-secondary rounded">
+                            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="mobile-nav-links" className="mt-2 grid grid-cols-1 gap-1 gap-x-4"></div>
+                </div>
+            </div>
 		</header>
 	);
 };
