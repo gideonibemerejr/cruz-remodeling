@@ -50,9 +50,9 @@ export default function Email({
 						margin: "40px auto",
 						maxWidth: "600px",
 						padding: "40px 20px",
-						backgroundColor: "#ffffff",
+						backgroundColor: "#082010",
 						borderRadius: "12px",
-						boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+						boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
 					}}
 				>
 					{/* Header */}
@@ -61,7 +61,7 @@ export default function Email({
 							style={{
 								fontSize: "28px",
 								fontWeight: "bold",
-								color: "#082010",
+								color: "#ffffff",
 								margin: "0 0 8px 0",
 							}}
 						>
@@ -93,7 +93,7 @@ export default function Email({
 							style={{
 								fontSize: "16px",
 								fontWeight: "600",
-								color: "#082010",
+								color: "#ffffff",
 								margin: "0 0 16px 0",
 							}}
 						>
@@ -102,7 +102,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -112,7 +112,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -122,7 +122,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -137,7 +137,7 @@ export default function Email({
 							style={{
 								fontSize: "16px",
 								fontWeight: "600",
-								color: "#082010",
+								color: "#ffffff",
 								margin: "0 0 16px 0",
 							}}
 						>
@@ -146,7 +146,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -156,7 +156,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -166,7 +166,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -176,7 +176,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -186,7 +186,7 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								margin: "8px 0",
 								lineHeight: "1.5",
 							}}
@@ -198,7 +198,7 @@ export default function Email({
 					<Hr
 						style={{
 							border: "none",
-							borderTop: "1px solid #C2D6C9",
+							borderTop: "1px solid #3ACF6E",
 							margin: "24px 0",
 						}}
 					/>
@@ -209,7 +209,7 @@ export default function Email({
 							style={{
 								fontSize: "16px",
 								fontWeight: "600",
-								color: "#082010",
+								color: "#ffffff",
 								margin: "0 0 16px 0",
 							}}
 						>
@@ -218,12 +218,12 @@ export default function Email({
 						<Text
 							style={{
 								fontSize: "14px",
-								color: "#505853",
+								color: "#C2D6C9",
 								lineHeight: "1.6",
-								backgroundColor: "#f9fbf9",
+								backgroundColor: "#1a3a1a",
 								padding: "16px",
 								borderRadius: "8px",
-								border: "1px solid #C2D6C9",
+								border: "1px solid #3ACF6E",
 							}}
 						>
 							{message}
@@ -251,8 +251,8 @@ export default function Email({
 						<Button
 							href={`tel:${phone}`}
 							style={{
-								backgroundColor: "#082010",
-								color: "#ffffff",
+								backgroundColor: "#ffffff",
+								color: "#082010",
 								padding: "12px 24px",
 								borderRadius: "8px",
 								textDecoration: "none",
@@ -268,7 +268,7 @@ export default function Email({
 					<Hr
 						style={{
 							border: "none",
-							borderTop: "1px solid #C2D6C9",
+							borderTop: "1px solid #3ACF6E",
 							margin: "32px 0 24px 0",
 						}}
 					/>
