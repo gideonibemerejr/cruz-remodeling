@@ -8,9 +8,9 @@ import "swiper/css";
 import { FaAngleRight } from "react-icons/fa6";
 
 // Image imports
-import Hero1 from "@/assets/images/hero-slide-image-1.jpg";
-import Hero2 from "@/assets/images/hero-slide-image-2.jpg";
-import Hero3 from "@/assets/images/hero-slide-image-3.jpg";
+import Hero1 from "@/assets/images/bathrooms/bathroom-hero.jpg";
+import Hero2 from "@/assets/images/decks/outdoor-hero.jpg";
+import Hero3 from "@/assets/images/kitchens/kitchen-hero.jpg";
 
 const Hero = () => {
 	return (
@@ -108,8 +108,8 @@ const Hero = () => {
 												{index === 0 || index === 3
 													? "Bathroom"
 													: index === 1
-														? "Bedroom"
-														: "Dining"}
+														? "Outdoor"
+														: "Kitchen"}
 												<br />
 												Remodeling
 											</p>
