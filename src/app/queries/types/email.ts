@@ -48,6 +48,7 @@ export const emailSchema = z.object({
 	timeline: z.string().min(1),
 	budget: z.string().min(1),
 	message: z.string().min(1),
+	recaptchaToken: z.string().min(1),
 });
 
 export type EmailTemplateProps = z.infer<typeof emailSchema>;

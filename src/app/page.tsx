@@ -7,6 +7,7 @@ import Hero from "@/components/home/hero";
 import Pricing from "@/components/home/pricing";
 import Process from "@/components/home/process";
 import Services from "@/components/home/services";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 export default function Home() {
 	return (
@@ -19,7 +20,11 @@ export default function Home() {
 			<Pricing />
 			<CTATwo />
 			<FAQ />
-			<Contact />
+			<GoogleReCaptchaProvider
+				reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+			>
+				<Contact />
+			</GoogleReCaptchaProvider>
 		</>
 	);
 }

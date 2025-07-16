@@ -1,13 +1,15 @@
 "use client";
-import useSendConsultationEmail from "@/app/queries/hooks/useSendConsultationEmail";
-import { EmailTemplateProps } from "@/app/queries/types/email";
 import React from "react";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import toast, { Toaster } from "react-hot-toast";
 import { FaAngleRight } from "react-icons/fa6";
-import Image from "next/image";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+
+import useSendConsultationEmail from "@/app/queries/hooks/useSendConsultationEmail";
+import { EmailTemplateProps } from "@/app/queries/types/email";
 import preloaderGif from "@/assets/images/preloader.gif";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { emailSchema } from "@/app/queries/types/email";
 
 const Contact = () => {
@@ -20,18 +22,33 @@ const Contact = () => {
 		resolver: zodResolver(emailSchema),
 	});
 
+	const { executeRecaptcha } = useGoogleReCaptcha();
+
 	const { sendEmail, isPending } = useSendConsultationEmail();
 
 	const onSubmit = async (data: EmailTemplateProps) => {
-		sendEmail(data, {
-			onSuccess: () => {
-				toast.success("Email sent successfully");
-				reset();
-			},
-			onError: () => {
-				toast.error("Email sending failed");
-			},
-		});
+		if (!executeRecaptcha) {
+			console.log("Recaptcha not ready");
+			return;
+		}
+		const token = await executeRecaptcha("send_consultation_email");
+		if (!token) {
+			console.log("Recaptcha token not generated");
+			return;
+		}
+
+		sendEmail(
+			{ ...data, recaptchaToken: token },
+			{
+				onSuccess: () => {
+					toast.success("Email sent successfully");
+					reset();
+				},
+				onError: () => {
+					toast.error("Email sending failed");
+				},
+			}
+		);
 	};
 
 	return (

@@ -22,7 +22,7 @@ export default function Email({
 	timeline,
 	budget,
 	message,
-}: EmailTemplateProps) {
+}: Omit<EmailTemplateProps, "recaptchaToken">) {
 	return (
 		<Html>
 			<Head />
