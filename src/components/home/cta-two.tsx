@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa";
 
-import RoomMain from "@/assets/images/cta-room-image.jpg";
-import RoomOverlay1 from "@/assets/images/cta-room-image-1.jpg";
-import RoomOverlay2 from "@/assets/images/cta-room-image-2.jpg";
+import RoomMain from "@/assets/images/bathrooms/bathroom-hero.jpg";
+import RoomOverlay1 from "@/assets/images/decks/deck-1.jpg";
+import RoomOverlay2 from "@/assets/images/closets/closet-1.jpg";
 
 const CTATwo = () => {
 	return (

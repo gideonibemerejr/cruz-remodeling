@@ -120,6 +120,54 @@ const Services = () => {
 						</p>
 					</div>
 				</div>
+
+				{/* Additional Services Lists */}
+				<div className="mt-16 grid md:grid-cols-2 gap-8">
+					{/* Indoor Remodeling Services */}
+					<div
+						className="bg-light-blue rounded-lg p-8"
+						data-aos="fade-up"
+						data-aos-delay="400"
+					>
+						<h3 className="text-2xl md:text-3xl font-bold text-secondary mb-6">
+							Indoor Remodeling
+						</h3>
+						<ul className="space-y-3 text-lg text-neutral">
+							<li>• Painting (Interior & Exterior)</li>
+							<li>• Sheetrock & Drywall</li>
+							<li>• Flooring Installation</li>
+							<li>• Kitchen Remodeling</li>
+							<li>• Bedroom Remodeling</li>
+							<li>• Carpentry & Woodwork</li>
+							<li>• Electrical Upgrades</li>
+							<li>• Plumbing Services</li>
+							<li>• Basement Finishing</li>
+						</ul>
+					</div>
+
+					{/* Outdoor Remodeling Services */}
+					<div
+						className="bg-light-blue rounded-lg p-8"
+						data-aos="fade-up"
+						data-aos-delay="600"
+					>
+						<h3 className="text-2xl md:text-3xl font-bold text-secondary mb-6">
+							Outdoor Remodeling
+						</h3>
+						<ul className="space-y-3 text-lg text-neutral">
+							<li>• Siding Installation</li>
+							<li>• Exterior Painting</li>
+							<li>• Power Washing</li>
+							<li>• Patio Construction</li>
+							<li>• Porch & Deck Building</li>
+							<li>• Fence Installation</li>
+							<li>• Gazebo Construction</li>
+							<li>• Roofing & Gutters</li>
+							<li>• Landscaping</li>
+							<li>• Outdoor Lighting</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
 	);

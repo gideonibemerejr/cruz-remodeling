@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
-import Room1 from "@/assets/images/room-image-1.jpg";
-import Room2 from "@/assets/images/room-image-2.jpg";
-import Room3 from "@/assets/images/room-image-3.jpg";
-import Room4 from "@/assets/images/room-image-4.jpg";
+import Room1 from "@/assets/images/decks/deck-about-1.jpg";
+import Room2 from "@/assets/images/rooms/room-about-2.jpg";
+import Room3 from "@/assets/images/bathrooms/bathroom-about-3.jpg";
+import Room4 from "@/assets/images/fencing/fencing-about-4.jpg";
+import OptimizedImage from "@/components/shared/optimized-image";
 
 const About = () => {
 	return (
@@ -101,32 +101,40 @@ const About = () => {
 					<div className="relative mt-4 lg:mt-0">
 						<div className="grid grid-cols-2 gap-6 md:gap-8">
 							<div className="grid gap-6 md:gap-8">
-								<Image
+								<OptimizedImage
 									src={Room1}
 									alt="Room Image"
+									priority={true}
+									blur={true}
 									data-aos="fade-up"
 									data-aos-delay="400"
 									className="w-full h-full object-cover rounded"
 								/>
-								<Image
+								<OptimizedImage
 									src={Room3}
 									alt="Room Image"
+									priority={true}
+									blur={true}
 									data-aos="fade-up"
 									data-aos-delay="800"
 									className="w-full h-full object-cover rounded"
 								/>
 							</div>
 							<div className="grid gap-6 md:gap-8">
-								<Image
+								<OptimizedImage
 									src={Room2}
 									alt="Room Image"
+									priority={true}
+									blur={true}
 									data-aos="fade-up"
 									data-aos-delay="600"
 									className="w-full h-full object-cover rounded"
 								/>
-								<Image
+								<OptimizedImage
 									src={Room4}
 									alt="Room Image"
+									priority={true}
+									blur={true}
 									data-aos="fade-up"
 									data-aos-delay="1000"
 									className="w-full h-full object-cover rounded"

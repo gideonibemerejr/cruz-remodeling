@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import { FaAngleRight } from "react-icons/fa6";
+import OptimizedImage from "@/components/shared/optimized-image";
 
 // Image imports
 import Hero1 from "@/assets/images/bathrooms/bathroom-hero.jpg";
@@ -98,9 +98,11 @@ const Hero = () => {
 										data-aos="fade-up"
 										data-aos-delay={400 + index * 200}
 									>
-										<Image
+										<OptimizedImage
 											src={image}
 											alt="Interior Design"
+											priority={index === 0}
+											blur={false}
 											className="w-full h-full object-cover"
 										/>
 										<div className="bg-hero-slider hover_content group-hover:opacity-100">

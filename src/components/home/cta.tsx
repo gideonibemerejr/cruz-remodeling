@@ -1,17 +1,18 @@
 "use client";
 import React, { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa";
+import OptimizedImage from "@/components/shared/optimized-image";
 
-import Img1 from "@/assets/images/small-image-1.jpg";
-import Img2 from "@/assets/images/small-image-2.jpg";
-import Img3 from "@/assets/images/small-image-3.jpg";
-import Img4 from "@/assets/images/small-image-4.jpg";
-import Img5 from "@/assets/images/small-image-5.jpg";
-import Img6 from "@/assets/images/small-image-6.jpg";
-import Img7 from "@/assets/images/small-image-7.jpg";
-import Img8 from "@/assets/images/small-image-8.jpg";
+// Import some existing images to replace the deleted ones
+import Room1 from "@/assets/images/bathrooms/bathroom-1.jpg";
+import Room2 from "@/assets/images/cabinets/cabinet-1.jpg";
+import Room3 from "@/assets/images/exterior/exterior-1.jpg";
+import Room4 from "@/assets/images/kitchens/kitchen-1.jpg";
+import Room5 from "@/assets/images/fencing/fencing-1.jpg";
+import Room6 from "@/assets/images/doors/doors-1.jpg";
+import Room7 from "@/assets/images/bathrooms/bathroom-2.jpg";
+import Room8 from "@/assets/images/cabinets/cabinet-2.jpg";
 
 const CTA = () => {
 	useEffect(() => {
@@ -98,17 +99,19 @@ const CTA = () => {
 
 					{/* Left Images */}
 					<div className="absolute left-0 md:-left-4 xl:-left-10 space-y-3 opacity-20 md:opacity-100">
-						{[Img1, Img2, Img3, Img4].map((src, index) => (
+						{[Room1, Room2, Room3, Room4].map((src, index) => (
 							<div
 								className="small_image"
 								data-aos="fade-right"
 								data-aos-delay={`${(index + 1) * 100}`}
 								key={`left-${index}`}
 							>
-								<Image
+								<OptimizedImage
 									src={src}
 									className="rounded"
-									alt={`Flat Image ${index + 1}`}
+									alt={`Room Image ${index + 1}`}
+									priority={false}
+									blur={true}
 								/>
 								<div className="bg-secondary-dark/20 absolute inset-0 rounded" />
 							</div>
@@ -117,17 +120,19 @@ const CTA = () => {
 
 					{/* Right Images */}
 					<div className="absolute right-0 md:-right-4 xl:-right-10 space-y-3 opacity-20 md:opacity-100">
-						{[Img5, Img6, Img7, Img8].map((src, index) => (
+						{[Room5, Room6, Room7, Room8].map((src, index) => (
 							<div
 								className="small_image_right"
 								data-aos="fade-left"
 								data-aos-delay={`${(index + 1) * 100}`}
 								key={`right-${index}`}
 							>
-								<Image
+								<OptimizedImage
 									src={src}
 									className="rounded"
-									alt={`Flat Image ${index + 5}`}
+									alt={`Room Image ${index + 5}`}
+									priority={false}
+									blur={true}
 								/>
 								<div className="bg-secondary-dark/20 absolute inset-0 rounded" />
 							</div>
