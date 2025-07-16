@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useCallback } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/images/logo/logo.png";
+// import logo from "@/assets/images/logo/logo.png";
 
 const Header = () => {
 	const handleResize = useCallback(() => {
