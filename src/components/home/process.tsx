@@ -9,17 +9,21 @@ import ReviewEnjoy from "@/assets/images/Review-Enjoy.jpg";
 
 const Process = () => {
 	return (
-		<section>
+		<section className="bg-secondary py-20">
 			<div className="container">
-				<div className="section_header overflow-hidden">
-					<h5 className="subtitle" data-aos="fade-down" data-aos-delay="400">
+				<div className="section_header overflow-hidden mb-16">
+					<h5
+						className="subtitle text-primary"
+						data-aos="fade-down"
+						data-aos-delay="400"
+					>
 						Our Simple Process
 					</h5>
-					<h2 className="title animateText !normal-case">
+					<h2 className="title animateText !normal-case text-white">
 						Remodeling Made Easy in 4 Steps
 					</h2>
 					<p
-						className="md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-3/4 mx-auto"
+						className="md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-3/4 mx-auto text-[#C2D6C9]"
 						data-aos="fade-up"
 						data-aos-delay="600"
 					>
@@ -44,12 +48,12 @@ const Process = () => {
 							data-aos="fade-left"
 							data-aos-delay="400"
 						>
-							<h4 className="text-[#C2D6C9]/75 text-5xl-1 font-bold">001</h4>
-							<p className="text-base font-medium text-secondary">
+							<h4 className="text-primary text-5xl-1 font-bold">Step 1</h4>
+							<p className="text-base font-medium text-[#C2D6C9]">
 								Understanding your lifestyle and design goals.
 							</p>
-							<h4 className="xl:text-[28px]">Consult & Visualize</h4>
-							<p>
+							<h4 className="xl:text-[28px] text-white">Consult & Visualize</h4>
+							<p className="text-[#C2D6C9]">
 								We begin with a one-on-one consultation to explore your needs,
 								preferences, and ideas. This step sets the foundation for a
 								remodeling plan that fits your vision.
@@ -64,12 +68,12 @@ const Process = () => {
 							data-aos="fade-right"
 							data-aos-delay="400"
 						>
-							<h4 className="text-[#C2D6C9]/75 text-5xl-1 font-bold">002</h4>
-							<p className="text-base font-medium text-secondary">
+							<h4 className="text-primary text-5xl-1 font-bold">Step 2</h4>
+							<p className="text-base font-medium text-[#C2D6C9]">
 								Understanding your lifestyle and design goals.
 							</p>
-							<h4 className="xl:text-[28px]">Design & Plan</h4>
-							<p>
+							<h4 className="xl:text-[28px] text-white">Design & Plan</h4>
+							<p className="text-[#C2D6C9]">
 								After we understand your vision, we translate it into a detailed
 								design and plan. You&apos;ll know exactly what to expect before
 								we begin building.
@@ -100,12 +104,12 @@ const Process = () => {
 							data-aos="fade-left"
 							data-aos-delay="400"
 						>
-							<h4 className="text-[#C2D6C9]/75 text-5xl-1 font-bold">003</h4>
-							<p className="text-base font-medium text-secondary">
+							<h4 className="text-primary text-5xl-1 font-bold">Step 3</h4>
+							<p className="text-base font-medium text-[#C2D6C9]">
 								Precision construction and expert management.
 							</p>
-							<h4 className="xl:text-[28px]">Build & Transform</h4>
-							<p>
+							<h4 className="xl:text-[28px] text-white">Build & Transform</h4>
+							<p className="text-[#C2D6C9]">
 								Once approved, we bring your plan to life with expert
 								craftsmanship and minimal disruption to your daily life.
 							</p>
@@ -119,12 +123,12 @@ const Process = () => {
 							data-aos="fade-right"
 							data-aos-delay="400"
 						>
-							<h4 className="text-[#C2D6C9]/75 text-5xl-1 font-bold">004</h4>
-							<p className="text-base font-medium text-secondary">
+							<h4 className="text-primary text-5xl-1 font-bold">Step 4</h4>
+							<p className="text-base font-medium text-[#C2D6C9]">
 								Final inspection and satisfaction check
 							</p>
-							<h4 className="xl:text-[28px]">Review & Enjoy</h4>
-							<p>
+							<h4 className="xl:text-[28px] text-white">Review & Enjoy</h4>
+							<p className="text-[#C2D6C9]">
 								After construction, we walk you through every detail to ensure
 								your satisfaction. Once approved, your new space is ready for
 								you to enjoy with full confidence.

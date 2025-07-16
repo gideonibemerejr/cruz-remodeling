@@ -176,6 +176,9 @@ const Header = () => {
 							<Link href="#services" className="nav_link nav_link_Small">
 								Services
 							</Link>
+							<Link href="#gallery" className="nav_link nav_link_Small">
+								Portfolio
+							</Link>
 							<Link
 								href="#contact"
 								className="nav_link nav_link_Small block md:hidden"
