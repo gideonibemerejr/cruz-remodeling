@@ -238,21 +238,25 @@ export default function Email({
 						>
 							Reply to Client
 						</Button>
-						<Button
-							href={`tel:${phone}`}
+						<Text
 							style={{
-								backgroundColor: "#ffffff",
-								color: "#082010",
-								padding: "12px 24px",
-								borderRadius: "8px",
-								textDecoration: "none",
-								fontWeight: "600",
 								fontSize: "14px",
+								color: "#ffffff",
+								textDecoration: "underline",
 								display: "inline-block",
+								marginLeft: "12px",
 							}}
 						>
-							Call Client
-						</Button>
+							<a
+								href={`tel:+1${phone.replace(/\D/g, "")}`}
+								style={{
+									color: "#ffffff",
+									textDecoration: "underline",
+								}}
+							>
+								Call Client
+							</a>
+						</Text>
 					</Section>
 
 					<Hr

@@ -1,4 +1,4 @@
-import EmailTemplate from "../../../../emails/consult-request";
+import EmailTemplate from "@/components/templates/consult-request";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -20,11 +20,7 @@ export async function POST(req: Request) {
 	try {
 		const { data, error } = await resend.emails.send({
 			from: "Cruz Remodeling Website <website@cruzremodelingtx.com>",
-			to: [
-				"gideon.ibemere.jr@gmail.com",
-				"gracie.ibemere@gmail.com",
-				"stephanie.ibemere@gmail.com",
-			],
+			to: ["g@gideonjr.com", "themusicpouch@gmail.com"],
 			subject: "New Consultation Request",
 			react: EmailTemplate({
 				firstName,

@@ -11,6 +11,7 @@ import AOSInit from "@/components/shared/aos-init";
 import ScrollButton from "@/components/shared/scroll-button";
 
 import ButtonExpand from "@/components/shared/button-expand";
+import Providers from "@/components/shared/providers";
 
 const calSans = localFont({
 	src: "../fonts/cal-sans/fonts/webfonts/CalSans-Regular.woff2",
@@ -52,14 +53,16 @@ export default function RootLayout({
 				className={`${inter.variable} ${calSans.variable} antialiased`}
 				suppressHydrationWarning={true}
 			>
-				<Preloader />
-				<Header />
-				<SmoothScroll />
-				<AOSInit />
-				<ButtonExpand />
-				{children}
-				<ScrollButton />
-				<Footer />
+				<Providers>
+					<Preloader />
+					<Header />
+					<SmoothScroll />
+					<AOSInit />
+					<ButtonExpand />
+					{children}
+					<ScrollButton />
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	);

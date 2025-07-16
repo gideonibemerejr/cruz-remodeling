@@ -7,6 +7,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaAngleRight } from "react-icons/fa6";
 import Image from "next/image";
 import preloaderGif from "@/assets/images/preloader.gif";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { emailSchema } from "@/app/queries/types/email";
 
 const Contact = () => {
 	const {
@@ -14,7 +16,9 @@ const Contact = () => {
 		handleSubmit,
 		reset,
 		formState: { errors, isSubmitting },
-	} = useForm<EmailTemplateProps>();
+	} = useForm<EmailTemplateProps>({
+		resolver: zodResolver(emailSchema),
+	});
 
 	const { sendEmail, isPending } = useSendConsultationEmail();
 
@@ -85,7 +89,7 @@ const Contact = () => {
 										/>
 										{errors.firstName && (
 											<p className="text-red-500 text-sm">
-												First name is required
+												{errors.firstName.message}
 											</p>
 										)}
 									</div>
@@ -99,7 +103,7 @@ const Contact = () => {
 										/>
 										{errors.lastName && (
 											<p className="text-red-500 text-sm">
-												Last name is required
+												{errors.lastName.message}
 											</p>
 										)}
 									</div>
@@ -116,7 +120,9 @@ const Contact = () => {
 											{...register("email", { required: true })}
 										/>
 										{errors.email && (
-											<p className="text-red-500 text-sm">Email is required</p>
+											<p className="text-red-500 text-sm">
+												{errors.email.message}
+											</p>
 										)}
 									</div>
 									<div className="sm:col-span-3">
@@ -125,13 +131,7 @@ const Contact = () => {
 											autoComplete="off"
 											className="form-control"
 											placeholder="(555) 123-4567"
-											{...register("phone", {
-												required: "Phone number is required",
-												pattern: {
-													value: /^[\+]?[1-9][\d]{0,15}$/,
-													message: "Please enter a valid US phone number",
-												},
-											})}
+											{...register("phone")}
 										/>
 										{errors.phone && (
 											<p className="text-red-500 text-sm">
@@ -162,7 +162,7 @@ const Contact = () => {
 									</select>
 									{errors.projectType && (
 										<p className="text-red-500 text-sm">
-											Project type is required
+											{errors.projectType.message}
 										</p>
 									)}
 								</div>
@@ -183,7 +183,7 @@ const Contact = () => {
 										</select>
 										{errors.roomType && (
 											<p className="text-red-500 text-sm">
-												Room count is required
+												{errors.roomType.message}
 											</p>
 										)}
 									</div>
@@ -204,7 +204,7 @@ const Contact = () => {
 										</select>
 										{errors.projectSize && (
 											<p className="text-red-500 text-sm">
-												Project size is required
+												{errors.projectSize.message}
 											</p>
 										)}
 									</div>
@@ -227,7 +227,7 @@ const Contact = () => {
 										</select>
 										{errors.timeline && (
 											<p className="text-red-500 text-sm">
-												Timeline is required
+												{errors.timeline.message}
 											</p>
 										)}
 									</div>
@@ -254,7 +254,9 @@ const Contact = () => {
 											<option value="Not sure">Not sure</option>
 										</select>
 										{errors.budget && (
-											<p className="text-red-500 text-sm">Budget is required</p>
+											<p className="text-red-500 text-sm">
+												{errors.budget.message}
+											</p>
 										)}
 									</div>
 								</div>
@@ -269,7 +271,7 @@ const Contact = () => {
 									></textarea>
 									{errors.message && (
 										<p className="text-red-500 text-sm">
-											Project details are required
+											{errors.message.message}
 										</p>
 									)}
 								</div>

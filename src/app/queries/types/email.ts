@@ -10,17 +10,37 @@ export const emailSchema = z.object({
 	phone: z
 		.string()
 		.nonempty({ message: "Phone number is required" })
+		.transform((phone) => phone.replace(/\s+/g, "")) // Remove all whitespace
 		.refine(
 			(phone) => {
 				try {
-					const parsedPhone = phoneUtil.parse(phone);
+					// Try parsing as US number first
+					let parsedPhone = phoneUtil.parse(phone, "US");
+					if (phoneUtil.isValidNumber(parsedPhone)) {
+						return true;
+					}
+
+					// If that fails, try parsing without country code (assume US)
+					parsedPhone = phoneUtil.parse(phone, "US");
 					return phoneUtil.isValidNumber(parsedPhone);
-				} catch (error) {
-					console.warn(error);
-					return false;
+				} catch {
+					// If parsing fails, try with +1 prefix
+					try {
+						const phoneWithCountryCode = phone.startsWith("+")
+							? phone
+							: `+1${phone}`;
+						const parsedPhone = phoneUtil.parse(phoneWithCountryCode);
+						return phoneUtil.isValidNumber(parsedPhone);
+					} catch (secondError) {
+						console.warn("Phone validation error:", secondError);
+						return false;
+					}
 				}
 			},
-			{ message: "Invalid phone number" }
+			{
+				message:
+					"Please enter a valid US phone number (e.g., 555-123-4567 or (555) 123-4567)",
+			}
 		),
 	projectType: z.string().min(1),
 	roomType: z.string().min(1),
