@@ -1,12 +1,11 @@
-import React from 'react';
-import BlogArchive from './blog-archive';
+import BlogArchive from "./blog-archive";
 
 const page = () => {
-    return (
-        <>
-            <BlogArchive />
-        </>
-    );
+	return (
+		<>
+			<BlogArchive />
+		</>
+	);
 };
 
 export default page;
