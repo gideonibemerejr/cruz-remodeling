@@ -22,7 +22,7 @@ export async function POST(req: Request) {
 		const recaptchaResponse = await fetch(
 			`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`
 		);
-		const { success, score } = (await recaptchaResponse.json()).data;
+		const { success, score } = await recaptchaResponse.json();
 
 		if (!success && score < 0.5) {
 			return Response.json(

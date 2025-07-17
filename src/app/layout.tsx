@@ -29,8 +29,7 @@ export const metadata: Metadata = {
 	robots: "noindex, nofollow",
 	openGraph: {
 		title: "Cruz Remodeling - Home Remodeling ",
-		description:
-			"Home Remodeling Framer Template that creates a high-converting remodeling website with Cruz Remodeling - Home Remodelling Website Template. Purchase now!",
+		description: "Making your vision a reality",
 		images: [
 			{
 				url: "/logo/logo.png",
@@ -38,8 +37,7 @@ export const metadata: Metadata = {
 		],
 	},
 	title: "Cruz Remodeling - Home Remodeling",
-	description:
-		"Home Remodeling Framer Template that creates a high-converting remodeling website with Cruz Remodeling - Home Remodelling Website Template. Purchase now!",
+	description: "Making your vision a reality",
 };
 
 export default function RootLayout({

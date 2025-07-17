@@ -29,7 +29,7 @@ const Hero = () => {
 							</h5>
 
 							<h1 className="title text-white text-center lg:text-left animateText !normal-case text-4xl md:text-6xl lg:text-5xl 2xl:text-[76px]">
-								Turning Ideas into Remarkable Design
+								Making Your Vision a Reality
 							</h1>
 
 							<p
