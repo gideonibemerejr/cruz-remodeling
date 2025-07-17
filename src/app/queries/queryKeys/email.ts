@@ -1,4 +1,4 @@
-import { EmailTemplateProps } from "@/components/templates/consult-request";
+import { EmailTemplateProps } from "../types/email";
 
 export const emailQueryKeys = {
 	all: ["email"] as const,
