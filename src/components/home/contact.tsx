@@ -27,28 +27,34 @@ const Contact = () => {
 	const { sendEmail, isPending } = useSendConsultationEmail();
 
 	const onSubmit = async (data: EmailTemplateProps) => {
-		if (!executeRecaptcha) {
-			console.log("Recaptcha not ready");
-			return;
-		}
-		const token = await executeRecaptcha("send_consultation_email");
-		if (!token) {
-			console.log("Recaptcha token not generated");
-			return;
-		}
-
-		sendEmail(
-			{ ...data, recaptchaToken: token },
-			{
-				onSuccess: () => {
-					toast.success("Email sent successfully");
-					reset();
-				},
-				onError: () => {
-					toast.error("Email sending failed");
-				},
+		console.log("onSubmit");
+		console.log(data);
+		try {
+			if (!executeRecaptcha) {
+				console.log("Recaptcha not ready");
+				return;
 			}
-		);
+			const token = await executeRecaptcha("send_consultation_email");
+			if (!token) {
+				console.log("Recaptcha token not generated");
+				return;
+			}
+
+			await sendEmail(
+				{ ...data, recaptchaToken: token },
+				{
+					onSuccess: () => {
+						toast.success("Email sent successfully");
+						reset();
+					},
+					onError: () => {
+						toast.error("Email sending failed");
+					},
+				}
+			);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (

@@ -27,6 +27,7 @@ const Preloader = () => {
 					src={preloaderGif}
 					alt="Preloader"
 					className="w-20 h-20 mx-auto mb-4 object-contain"
+					priority={true}
 				/>
 				<h1 className="text-white text-2xl font-primary font-bold">
 					Cruz Remodeling

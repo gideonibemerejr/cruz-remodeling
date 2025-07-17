@@ -32,7 +32,7 @@ export async function POST(req: Request) {
 		} else {
 			const { data, error } = await resend.emails.send({ 
 				from: "Cruz Remodeling Website <website@cruzremodelingtx.com>",
-				to: ["g@gideonjr.com", "themusicpouch@gmail.com"],
+				to: ["g@gideonjr.com", "themusicpouch@gmail.com", "gracie.ibemere@gmail.com", "stephanie.ibemere@gmail.com"],
 				subject: "New Consultation Request",
 				react: EmailTemplate({
 					firstName,
