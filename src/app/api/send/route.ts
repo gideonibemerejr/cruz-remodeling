@@ -30,7 +30,7 @@ export async function POST(req: Request) {
 				{ status: 400 }
 			);
 		} else {
-			const { data, error } = await resend.emails.send({
+			const { data, error } = await resend.emails.send({ 
 				from: "Cruz Remodeling Website <website@cruzremodelingtx.com>",
 				to: ["g@gideonjr.com", "themusicpouch@gmail.com"],
 				subject: "New Consultation Request",
