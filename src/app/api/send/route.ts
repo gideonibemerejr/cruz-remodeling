@@ -18,10 +18,15 @@ export async function POST(req: Request) {
 		recaptchaToken,
 	} = await req.json();
 
+	const formData = `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+
 	try {
 		const recaptchaResponse = await fetch(
-			`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+			`https://www.google.com/recaptcha/api/siteverify?${formData}`,
 			{
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
 				method: "POST",
 			}
 		);
