@@ -260,10 +260,16 @@
 
 	/* Bottom to top ScrollBtn */
 	.scroll_btn {
-		@apply flex items-center justify-center bg-secondary text-neutral-light text-xl rounded w-8 h-8 fixed z-30 bottom-4 right-4 border border-solid border-neutral-light/10 transition-all duration-300 hover:text-white hover:bg-primary hover:border-primary;
+		@apply flex items-center justify-center bg-secondary text-neutral-light text-xl rounded w-8 h-8 fixed z-30 border border-solid border-neutral-light/10 transition-all duration-300 hover:text-white hover:bg-primary hover:border-primary;
+		bottom: 1rem !important;
+		left: 1rem !important;
+		right: auto !important;
 	}
 	#scrollBtn {
-		@apply hidden fixed bottom-4 right-4 z-30;
+		@apply hidden fixed z-30;
+		bottom: 1rem !important;
+		left: 1rem !important;
+		right: auto !important;
 	}
 	#scrollBtn.show {
 		@apply block;
@@ -320,6 +326,22 @@
 			transform: scale(1.05);
 		}
 	}
+}
+
+/* Move Next.js development overlay to top-right */
+#__next-build-watcher {
+	top: 1rem !important;
+	right: 1rem !important;
+	bottom: auto !important;
+	left: auto !important;
+}
+
+/* Move Next.js error overlay if it appears */
+#__next-prerender-indicator {
+	top: 1rem !important;
+	right: 1rem !important;
+	bottom: auto !important;
+	left: auto !important;
 }
 
 /*

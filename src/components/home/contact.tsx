@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,27 +21,32 @@ const Contact = () => {
 	} = useForm<EmailTemplateProps>({
 		resolver: zodResolver(emailSchema),
 	});
-
+	const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 	const { executeRecaptcha } = useGoogleReCaptcha();
 
 	const { sendEmail, isPending } = useSendConsultationEmail();
 
-	const onSubmit = async (data: EmailTemplateProps) => {
-		console.log("onSubmit");
-		console.log(data);
-		try {
-			if (!executeRecaptcha) {
-				console.log("Recaptcha not ready");
-				return;
-			}
-			const token = await executeRecaptcha("send_consultation_email");
-			if (!token) {
-				console.log("Recaptcha token not generated");
-				return;
-			}
+	const handleReCaptchaVerify = useCallback(async () => {
+		if (!executeRecaptcha) {
+			console.warn("Recaptcha not ready");
+			return;
+		}
+		const token = await executeRecaptcha("send_consultation_email");
+		if (!token) {
+			console.warn("Recaptcha token not generated");
+			return;
+		}
+		setRecaptchaToken(token);
+	}, [executeRecaptcha]);
 
+	useEffect(() => {
+		handleReCaptchaVerify();
+	}, [handleReCaptchaVerify]);
+
+	const onSubmit = async (data: EmailTemplateProps) => {
+		try {
 			await sendEmail(
-				{ ...data, recaptchaToken: token },
+				{ ...data, recaptchaToken: recaptchaToken! },
 				{
 					onSuccess: () => {
 						toast.success("Email sent successfully");

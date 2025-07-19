@@ -10,6 +10,12 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
 		<QueryClientProvider client={queryClient}>
 			<GoogleReCaptchaProvider
 				reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+				container={{
+					parameters: {
+						badge: "bottomleft",
+						theme: "dark",
+					},
+				}}
 			>
 				{children}
 			</GoogleReCaptchaProvider>

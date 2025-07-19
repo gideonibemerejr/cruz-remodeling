@@ -20,7 +20,10 @@ export async function POST(req: Request) {
 
 	try {
 		const recaptchaResponse = await fetch(
-			`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`
+			`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+			{
+				method: "POST",
+			}
 		);
 		const { success, score } = await recaptchaResponse.json();
 
@@ -30,9 +33,14 @@ export async function POST(req: Request) {
 				{ status: 400 }
 			);
 		} else {
-			const { data, error } = await resend.emails.send({ 
+			const { data, error } = await resend.emails.send({
 				from: "Cruz Remodeling Website <website@cruzremodelingtx.com>",
-				to: ["g@gideonjr.com", "themusicpouch@gmail.com", "gracie.ibemere@gmail.com", "stephanie.ibemere@gmail.com"],
+				to: [
+					"g@gideonjr.com",
+					"themusicpouch@gmail.com",
+					"gracie.ibemere@gmail.com",
+					"stephanie.ibemere@gmail.com",
+				],
 				subject: "New Consultation Request",
 				react: EmailTemplate({
 					firstName,

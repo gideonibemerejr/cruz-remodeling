@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
 	experimental: {
 		optimizePackageImports: ["react-icons"],
 	},
+	devIndicators: {
+		position: "top-right",
+	},
 };
 
 export default nextConfig;
