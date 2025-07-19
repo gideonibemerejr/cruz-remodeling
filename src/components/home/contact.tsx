@@ -43,24 +43,33 @@ const Contact = () => {
 		handleReCaptchaVerify();
 	}, [handleReCaptchaVerify]);
 
-	const onSubmit = async (data: EmailTemplateProps) => {
-		try {
-			await sendEmail(
-				{ ...data, recaptchaToken: recaptchaToken! },
-				{
-					onSuccess: () => {
-						toast.success("Email sent successfully");
-						reset();
-					},
-					onError: () => {
-						toast.error("Email sending failed");
-					},
-				}
-			);
-		} catch (error) {
-			console.error(error);
-		}
-	};
+	const onSubmit = useCallback(
+		async (data: EmailTemplateProps) => {
+			if (!recaptchaToken) {
+				console.warn("No reCAPTCHA token available");
+				toast.error("Please wait for reCAPTCHA to load");
+				return;
+			}
+
+			try {
+				await sendEmail(
+					{ ...data, recaptchaToken },
+					{
+						onSuccess: () => {
+							toast.success("Email sent successfully");
+							reset();
+						},
+						onError: () => {
+							toast.error("Email sending failed");
+						},
+					}
+				);
+			} catch (error) {
+				console.error(error);
+			}
+		},
+		[recaptchaToken, sendEmail, reset]
+	);
 
 	return (
 		<section id="contact">
