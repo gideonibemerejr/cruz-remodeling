@@ -25,7 +25,7 @@ import Bathroom18 from "@/assets/images/bathrooms/bathroom-18.jpg";
 
 // Cabinets
 import Cabinet1 from "@/assets/images/cabinets/cabinet-1.jpg";
-import Cabinet2 from "@/assets/images/cabinets/cabinet-2.jpg";
+
 import Cabinet3 from "@/assets/images/cabinets/cabinet-3.jpg";
 import Cabinet4 from "@/assets/images/cabinets/cabinet-4.jpg";
 import Cabinet5 from "@/assets/images/cabinets/cabinet-5.jpg";
@@ -121,7 +121,6 @@ const bathroomImages = [
 
 const cabinetImages = [
 	{ src: Cabinet1, alt: "Cabinet 1" },
-	{ src: Cabinet2, alt: "Cabinet 2" },
 	{ src: Cabinet3, alt: "Cabinet 3" },
 	{ src: Cabinet4, alt: "Cabinet 4" },
 	{ src: Cabinet5, alt: "Cabinet 5" },
